@@ -116,7 +116,7 @@ class Invoice(DBModel):
     def __unicode__(self):
         ret = '%s' % (self.number)
         if self.client is not None:
-            ret += self.client
+            ret += '%s' % self.client
         return ret
     
 class Bike(DBModel):
