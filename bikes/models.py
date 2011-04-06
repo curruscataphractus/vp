@@ -58,12 +58,12 @@ class Client(DBModel):
     id = AutoField(primary_key=True)
     first_name = CharField(_('First name'), help_text=_('First name'), max_length=100)
     last_name = CharField(_('Last name'), help_text=_('Last name'), max_length=100)
-    id_no = CharField(_('Id #'), help_text=_('ID'), max_length=50, unique=True, blank=True)
+    id_no = CharField(_('Id #'), help_text=_('ID'), max_length=50, unique=True)
     address = CharField(_('Address'), help_text=_('Postal address'), blank=True, null=True, max_length=100)
     zip_code = PositiveSmallIntegerField(_('Zip code'), help_text=_('Address zip code'), blank=True, null=True)
-    email = EmailField(unique=True, blank=True)
-    file_no = CharField(_('File #'), help_text=_('Internal file #'), max_length=50, unique=True, blank=True)
-    notes = TextField(_('Notes'), help_text=_('Notes'))
+    email = EmailField(blank=True, null=True, unique=False)
+    file_no = CharField(_('File #'), help_text=_('Internal file #'), max_length=50, blank=True, null=True, default=None)
+    notes = TextField(_('Notes'), help_text=_('Notes'), blank=True, null=True)
     
     class Meta:
         verbose_name = _('client')
@@ -103,7 +103,7 @@ class Invoice(DBModel):
     
     class Meta:
         verbose_name = _('invoice')
-        verbose_name_plural = _('invoice')
+        verbose_name_plural = _('invoices')
 
 
     def __str__(self):
