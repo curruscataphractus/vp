@@ -2,7 +2,7 @@
 from datetime import date, datetime
 
 from django.db.models import Model as DBModel, AutoField, CharField, PositiveIntegerField, ForeignKey,\
-     EmailField, DateField, PositiveSmallIntegerField, TextField
+     ManyToManyField, EmailField, DateField, PositiveSmallIntegerField, TextField
 
 from django.utils.translation import ugettext as _
 
@@ -100,11 +100,14 @@ class Invoice(DBModel):
     date = DateField(_('Date'), help_text=_('Date'), null=False, default=date.today())
 
     client = ForeignKey('Client', verbose_name=_('client'))
+    bike = ManyToManyField('Bike', verbose_name=_('bike'))
     
     class Meta:
         verbose_name = _('invoice')
         verbose_name_plural = _('invoices')
 
+    #def bikes(self):
+    #    return self.bike_set.all()
 
     def __str__(self):
         return '<Invoice: %s, date: %s>' % (self.number, self.date)
@@ -130,7 +133,7 @@ class Bike(DBModel):
 
     model = ForeignKey('Model', verbose_name=_('model'))
     client = ForeignKey('Client', verbose_name=_('client'), null=True, blank=True)
-    invoice = ForeignKey('Invoice', verbose_name=_('invoice'), null=True, blank=True)
+    # invoice = ForeignKey('Invoice', verbose_name=_('invoice'), null=True, blank=True)
     
     class Meta:
         verbose_name = _('bike')
@@ -138,8 +141,9 @@ class Bike(DBModel):
 
 
     def __str__(self):
-        return '<Model: %s, brand: %s, cc: %d, year: %d>' % (self.name, self.brand.name,
-                                                             self.cc, self.year)
+        return '<Bike: %s, serial: %s, plate: %s>' % (self.model,
+                                                      self.serial,
+                                                      self.plate)
 
     def __repr__(self):
         return self.__str__()
