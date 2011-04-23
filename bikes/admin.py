@@ -20,11 +20,22 @@ class InvoiceAdmin(admin.ModelAdmin):
     list_display = ('date','number', 'client')
     search_fields = ['number', 'date']
     # inlines = [ChoiceInline]
-    
 
-admin.site.register(Brand)
-admin.site.register(Model)
-admin.site.register(Client)
+class BikeAdmin(admin.ModelAdmin):
+    list_display = ('model', 'plate', 'client')
+
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
+class ModelAdmin(admin.ModelAdmin):
+    list_display = ('brand', 'name', 'year', 'cc',)
+
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'file_no', 'id_no')
+
+admin.site.register(Brand, BrandAdmin)
+admin.site.register(Model, ModelAdmin)
+admin.site.register(Client, ClientAdmin)
 # admin.site.register(Client, ClientAdmin)
 admin.site.register(Invoice, InvoiceAdmin)
-admin.site.register(Bike)
+admin.site.register(Bike, BikeAdmin)
