@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-22 18:15+0200\n"
+"POT-Creation-Date: 2011-08-22 19:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,178 +18,190 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: models.py:12 models.py:29
+#: models.py:13 models.py:30
 msgid "name"
 msgstr "Nombre"
 
-#: models.py:12
+#: models.py:13
 msgid "Brand name"
 msgstr "Nombre marca"
 
-#: models.py:15 models.py:33
+#: models.py:16 models.py:34
 msgid "brand"
 msgstr "Marca"
 
-#: models.py:16
+#: models.py:17
 msgid "brands"
 msgstr "Marcas"
 
-#: models.py:29
+#: models.py:30
 msgid "Model name"
 msgstr "Nombre modelo"
 
-#: models.py:30
+#: models.py:31
 msgid "Cubic centimeters"
 msgstr "Centimetros cubicos"
 
-#: models.py:31
+#: models.py:32
 msgid "year"
 msgstr "año"
 
-#: models.py:31
+#: models.py:32
 msgid "Model year"
 msgstr "Año del modelo"
 
-#: models.py:36 models.py:134
+#: models.py:37 models.py:135
 msgid "model"
 msgstr "modelo"
 
-#: models.py:37
+#: models.py:38
 msgid "models"
 msgstr "modelos"
 
-#: models.py:59
+#: models.py:60
 msgid "First name"
 msgstr "Nombre"
 
-#: models.py:60
+#: models.py:61
 msgid "Last name"
 msgstr "Apellido"
 
-#: models.py:61
+#: models.py:62
 msgid "Id #"
 msgstr "DNI"
 
-#: models.py:61
+#: models.py:62
 msgid "ID"
 msgstr "Identificador"
 
-#: models.py:62
+#: models.py:63
 msgid "Address"
 msgstr "Direccion"
 
-#: models.py:62
+#: models.py:63
 msgid "Postal address"
 msgstr "Direccion postal"
 
-#: models.py:63
+#: models.py:64
 msgid "Zip code"
 msgstr "Codigo postal"
 
-#: models.py:63
+#: models.py:64
 msgid "Address zip code"
 msgstr "Codigo postal"
 
-#: models.py:65
+#: models.py:66
 msgid "File #"
 msgstr "Numero de expediente"
 
-#: models.py:65
+#: models.py:66
 msgid "Internal file #"
 msgstr "Numero de fichero interno"
 
-#: models.py:66
+#: models.py:67
 msgid "Notes"
 msgstr "Notas"
 
-#: models.py:69 models.py:102 models.py:135
+#: models.py:70 models.py:103 models.py:136
 msgid "client"
 msgstr "cliente"
 
-#: models.py:70
+#: models.py:71
 msgid "clients"
 msgstr "clientes"
 
-#: models.py:87
+#: models.py:88
 msgid "New"
 msgstr "Nueva"
 
-#: models.py:88
+#: models.py:89
 msgid "Used"
 msgstr "Usada"
 
-#: models.py:92
+#: models.py:93
 msgid "Stored"
 msgstr "Almacen"
 
-#: models.py:93
+#: models.py:94
 msgid "Pre paid"
 msgstr "Señalizada"
 
-#: models.py:94
+#: models.py:95
 msgid "Sold"
 msgstr "Vendida"
 
-#: models.py:99
+#: models.py:100
 msgid "Invoice #"
 msgstr "Número de factura"
 
-#: models.py:100
+#: models.py:101
 msgid "Date"
 msgstr "Fecha"
 
-#: models.py:103 models.py:139
+#: models.py:104 models.py:140
 msgid "bike"
 msgstr "moto"
 
-#: models.py:106
+#: models.py:107
 msgid "invoice"
 msgstr "factura"
 
-#: models.py:107
+#: models.py:108
 msgid "invoices"
 msgstr "facturas"
 
-#: models.py:127
+#: models.py:128
 msgid "Serial"
 msgstr "Bastidor"
 
-#: models.py:127
+#: models.py:128
 msgid "Bike serial"
 msgstr "Número de bastidor"
 
-#: models.py:128
+#: models.py:129
 msgid "Color"
 msgstr "Color"
 
-#: models.py:129
+#: models.py:130
 msgid "Key code"
 msgstr "Código de llave"
 
-#: models.py:130
+#: models.py:131
 msgid "plate"
 msgstr "matrícula"
 
-#: models.py:130
+#: models.py:131
 msgid "Plate"
 msgstr "Matrícula"
 
-#: models.py:131
+#: models.py:132
 msgid "Source"
 msgstr "Fuente"
 
-#: models.py:131
+#: models.py:132
 msgid "Bike source"
 msgstr "Origen de la moto"
 
-#: models.py:132
+#: models.py:133
 msgid "State"
 msgstr "Estado"
 
-#: models.py:132
+#: models.py:133
 msgid "Bike state"
 msgstr "Estado de la moto"
 
-#: models.py:140
+#: models.py:141
 msgid "bikes"
 msgstr "motos"
+
+#: validators.py:10
+msgid ""
+"Invalid Id number. Remember must be in the form 8 numbers followed by a "
+"letter"
+msgstr "El número de DNI no es válido. Recuerde que debe estar formado por 8 números seguidos de un guión y una letra. Por ejemplo, 11223344-A"
+
+#: validators.py:18
+msgid ""
+"Invalid plate number. Remember must be in the form NNNN-LLL or LL-NNNN-LL "
+"for old ones"
+msgstr ""
