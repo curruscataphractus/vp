@@ -6,6 +6,7 @@ from django.db.models import Model as DBModel, AutoField, CharField, PositiveInt
 
 from django.utils.translation import ugettext as _
 
+from vp.bikes.validators import validate_id_no, validate_plate
 
 class Brand(DBModel):
     id = AutoField(primary_key=True)
@@ -58,7 +59,7 @@ class Client(DBModel):
     id = AutoField(primary_key=True)
     first_name = CharField(_('First name'), help_text=_('First name'), max_length=100)
     last_name = CharField(_('Last name'), help_text=_('Last name'), max_length=100)
-    id_no = CharField(_('Id #'), help_text=_('ID'), max_length=50, unique=True)
+    id_no = CharField(_('Id #'), help_text=_('ID'), max_length=50, unique=True, validators=[validate_id_no])
     address = CharField(_('Address'), help_text=_('Postal address'), blank=True, null=True, max_length=100)
     zip_code = PositiveSmallIntegerField(_('Zip code'), help_text=_('Address zip code'), blank=True, null=True)
     email = EmailField(blank=True, null=True, unique=False)
@@ -127,7 +128,7 @@ class Bike(DBModel):
     serial = CharField(_('Serial'), help_text=_('Bike serial'), unique=True, null=False, max_length=70)
     color = CharField(_('Color'), help_text=_('Color'), max_length=70)
     key_code = CharField(_('Key code'), help_text=_('Key code'), unique=True, null=False, max_length=10)
-    plate = CharField(_('plate'), help_text=_('Plate'), max_length=16, unique=True, null=True, blank=True)
+    plate = CharField(_('plate'), help_text=_('Plate'), max_length=16, unique=True, null=True, blank=True, validators=[validate_plate])
     source = CharField(_('Source'), help_text=_('Bike source'), max_length=1, choices=BIKE_TYPE, default='N')
     state = CharField(_('State'), help_text=_('Bike state'), max_length=2, choices=BIKE_STATE, default='ST')
 
